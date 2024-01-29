@@ -1,49 +1,38 @@
 ## Members
-Henry Forsyth, Computer Engineering Student (2024)
-rhforsythjr@vt.edu
+Eddie Pritchard, Vasili Konstantinakos, Felipe Quintero - Computer Engineering Students (2024)
+epritchard@vt.edu
 
 ## Mentor
-MENTOR NAME HERE
+Eddie Pritchard
 
 ## Current Status
 IN PROGRESS
 
 ## Project Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula, odio eu dictum aliquet, enim elit tempor diam, quis volutpat mi eros ut nisi. Aliquam luctus orci eget accumsan porta. Proin sollicitudin ultricies lacus et varius. Pellentesque tempor vehicula tempus. Integer semper id lorem vehicula tristique. Suspendisse nec placerat libero, eget aliquet eros. Phasellus iaculis quis lorem in ultrices. Nunc lobortis odio at sem pretium dictum. Integer sed tellus quis lorem pretium posuere.
+The Eight Bit simple PLC is a reductionist eight bit computer and compiler/assembler pair which uses as few 74 series chips as possible. The reductionist design can be replicated in a variety of mediums not only 74 series chips (for example relays, vacuum tubes, or on an fpga) in order to use as little power as possible. This project serves as a research project into computer architecture allowing students to learn what design decisions allow for less hardware to be used at the expense of a more complicated virtual architecture / rom layout. 
 
 ## Educational Value Added
 
-Vivamus dapibus iaculis dui. Nullam vitae arcu a nisi elementum semper eu eu velit. Suspendisse vel dictum lacus. Sed facilisis luctus consequat. Donec vulputate eu dolor in molestie. Maecenas pretium sem non tellus facilisis sollicitudin id ut nulla. In condimentum orci nisi, sagittis facilisis neque convallis eget. Duis ut sem cursus, placerat mi pellentesque, mollis eros. Integer efficitur blandit elit, sed egestas sem porta in. Mauris euismod nulla ac tellus tempus, eu egestas dui molestie. Proin faucibus enim quis consequat sodales. Pellentesque eleifend blandit augue et laoreet. Phasellus vel posuere nisi, ac aliquam arcu.
+This project will allow students to explore design choices in computer engineering. Instruction set design maps directly to the hardware required to execute each step within a processor, and certain instruction sets require expensive hardware designs which are wasteful in terms of resources and power. By learning more about how instruction sets design maps to hardware, students will be able to design more efficient computer architectures which multiplex hardware in the time domain (pipelining).
 
 ## Tasks
 
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
+We have already completed the virtual simulation in Logisim.
+We have already begun writing the assembler / compiler.
+
+Final steps are PCB design of the final design once we have determined the optimal computer architecture. 
 
 ## Design Decisions
 
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
+PCB design is big. First we need to finish simulations to make sure the computer design is turing complete / most effective design avoiding complex / time expensive instructions.
 
-## Design Misc
-
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
-
-## Steps for Documenting Your Design Process
-
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
 
 ## BOM + Component Cost
 
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
+0$ - 50$. The final product will be a hand soldered PCB ordered from JLC PCB. All components (74 series chips) I have on hand.
 
 ## Timeline
 
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
+PCB ordered by 2/3/24
 
-## Useful Links
-
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
-
-## Log
-
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
