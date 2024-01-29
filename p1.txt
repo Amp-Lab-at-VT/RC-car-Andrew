@@ -1,0 +1,38 @@
+#	COMMAND		PURPOSE
+
+#	shit		shift bus bits right by 1 bit
+#	sh2t		shift bus bits right by 2 bits
+#	rra1		read ram through ALU operaion 1
+#	rra2		read ram through ALU operaion 2
+#	wram		write to ram
+#	rupc		read upper byte of program counter
+#	wlpc		write to lower byte of program counter
+#	rcon		read a constant from ram
+
+#utils
+#every 128 jumputil
+
+
+#routine balls
+#	rcon balls[0]
+#	wlpc 0
+
+rcon 1
+sh2t
+sh2t
+rcon 4
+
+#rcon 15
+#sh2t
+#sh2t
+#rcon 15		#jump to location lower half
+#sh2t		#shift
+#sh2t
+#rcon 0		#jump to location upper half
+#sh2t
+#sh2t
+#wram 2		#use ram 2 as temp
+#wlpc 2
+
+
+

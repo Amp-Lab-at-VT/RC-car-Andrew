@@ -1,0 +1,30 @@
+#no empty lines. "#" character invalidates a line from lut.
+shit 4
+sh2t 0
+rra1 8
+rra2 9
+wram B
+rupc C0
+wlpc A
+rcon D
+0 0
+1 1
+2 2
+3 3
+4 4
+5 5
+6 6
+7 7
+8 8
+9 9
+10 A
+11 B
+12 C
+13 D
+14 E
+15 F
+#jumputil is used to facilitate the Pritchard Stack Jump.
+jumputil A0
+every RESERVED
+routine RESERVED
+pointer RESERVED
