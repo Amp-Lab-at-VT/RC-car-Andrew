@@ -1,9 +1,9 @@
 ## Members
-Eddie Pritchard, Vasili Konstantinakos, Felipe Quintero - Computer Engineering Students (2024)
+Eddie Pritchard, Vasili Konstantinakos, Felipe Quintero, Pacheck Nicholas - Computer Engineering Students (2024)
 epritchard@vt.edu
 
 ## Mentor
-Eddie Pritchard
+Eddie Pritchard, Ethan James
 
 ## Current Status
 IN PROGRESS
