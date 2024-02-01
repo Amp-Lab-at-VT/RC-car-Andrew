@@ -1,0 +1,10 @@
+#	COMMAND		PURPOSE
+
+#	shit		shift bus bits right by 1 bit
+#	sh2t		shift bus bits right by 2 bits
+#	rra1		read ram through ALU operaion 1
+#	rra2		read ram through ALU operaion 2
+#	wram		write to ram
+#	rupc		read upper byte of program counter
+#	wlpc		write to lower byte of program counter
+#	rcon		read a constant from ram
