@@ -1,0 +1,33 @@
+#	COMMAND		PURPOSE
+
+#	shit		shift bus bits right by 1 bit
+#	sh2t		shift bus bits right by 2 bits
+#	rra1		read ram through ALU operaion 1
+#	rra2		read ram through ALU operaion 2
+#	wram		write to ram
+#	rupc		read upper byte of program counter
+#	wlpc		write to lower byte of program counter
+#	rcon		read a constant from ram
+	
+
+#begin write to ram program.
+#ARGUMENTS: address, data 
+#write 11 to 0040
+
+rcon 4
+sh2t
+sh2t
+sh2t
+sh2t
+sh2t
+sh2t
+rcon 1
+sh2t
+sh2t
+rcon 1
+sh2t
+sh2t
+sh2t
+sh2t
+
+wram 0

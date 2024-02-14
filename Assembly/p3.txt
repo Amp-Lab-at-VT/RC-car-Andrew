@@ -1,0 +1,68 @@
+#	COMMAND		PURPOSE
+
+#	shit		shift bus bits right by 1 bit
+#	sh2t		shift bus bits right by 2 bits
+#	rra1		read ram through ALU operaion 1
+#	rra2		read ram through ALU operaion 2
+#	wram		write to ram
+#	rupc		read upper byte of program counter
+#	wlpc		write to lower byte of program counter
+#	rcon		read a constant from ram
+	
+
+###########################################################################
+
+every 128 jumputil
+
+#program facilitating a single 15bit jump
+
+#considerations: 	Jump to location (and its "register" in ram)
+#			Return to Address (and its "register" in ram)
+
+#for this example, jump to 0004 hex
+#jump to location will be sourced from ram locations 2 and 3
+#return to address will be stored in ram location 0 and 1
+
+
+
+
+
+
+#place the constant 0 in ram.
+rcon 10	#JUMP TO LOCATION IS 001A THIS IS START OF PROGRAM (2 PC per instruction)
+sh2t
+sh2t
+rcon 1	
+sh2t
+sh2t
+wram 0
+#TODO fix here, this spot writes ff to ram
+rcon 0
+sh2t
+sh2t
+wram 1	#use register 1 to store the constant 00
+wlpc 1	#place 00 in PC LSByte
+
+
+
+#Reserved location to perform a jump
+wlpc 0 #this location in ram must contain jump to location
+
+
+
+#STEP ONE: Place jump to location (0004) in ram locations 2 and 3
+
+rcon 4
+sh2t
+sh2t
+sh2t
+sh2t	#four sh2ts to offset data into ram write registers
+
+wram 1	#write the constant 4 to ram location 1. given that ram cleared to 0, 
+	#ram locations 0 and 1 together read 0004
+
+#STEP TWO: Move the current PC MSByte into ram address 2
+rupc
+wram 2
+
+#STEP THREE: 
