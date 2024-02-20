@@ -1,38 +1,38 @@
-#	COMMAND		PURPOSE
+################    INSTRUCTION TABLE   ################
 
-#	shit		shift bus bits right by 1 bit
-#	sh2t		shift bus bits right by 2 bits
-#	rra1		read ram through ALU operaion 1
-#	rra2		read ram through ALU operaion 2
-#	wram		write to ram
-#	rupc		read upper byte of program counter
-#	wlpc		write to lower byte of program counter
-#	rcon		read a constant from ram
+#                       SHIFTS:
+                    
+#"literal"      "abbrev"    "argument"      "description"
+#$  0           sh2a        ram_addr_cond       bus twice if alu cout or result eq_zero
+#$  1           sh2c        ram_addr_cond       bus twice if alu cout
+#$  2           sh2z        ram_addr_cond       bus twice if alu result eq_zero
+#$  3           sh2u        none                bus twice unconditionally
+#$  4           sh1a        ram_addr_cond       bus once if alu cout or result eq_zero
+#$  5           sh1c        ram_addr_cond       bus once if alu cout
+#$  6           sh1z        ram_addr_cond       bus once if alu result eq_zero
+#$  7           sh1u        none                bus once unconditionally
 
-#utils
-#every 128 jumputil
+#                       WRITES:
+
+#"literal"      "abbrev"    "argument"      "description"
+#$  8           r+r2        ram_addr_lsh        ram(addr) + r2 to r7
+#$  9           r&r2        ram_addr_lsh        ram(addr) NAND r2 to r7
+#$  a           wpcl        ram_addr_lsh        ram(addr) to PC lower, write PC lower byte to PC upper
+#$  b           wram        ram_addr_lsh        r4,r3 to ram(addr)
+#$  c           rpcu        none                PC upper to r4,r3
+#$  d           rcon        constant            constant from rom to r5
+#$  e           rext        none                external to r1,r0
+#$  f           wext        select_peri         r1,r0 to external
 
 
-#routine balls
-#	rcon balls[0]
-#	wlpc 0
-
+#THE FOLLOWING PROGRAM COMPUTES N = N + 1 INDEFINITELY
 rcon 1
-sh2t
-sh2t
-rcon 4
-
-#rcon 15
-#sh2t
-#sh2t
-#rcon 15		#jump to location lower half
-#sh2t		#shift
-#sh2t
-#rcon 0		#jump to location upper half
-#sh2t
-#sh2t
-#wram 2		#use ram 2 as temp
-#wlpc 2
+sh2u
+sh2u
+rcon 10
+sh2u
+sh2u
+wram 0
 
 
 

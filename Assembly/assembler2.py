@@ -1,4 +1,3 @@
-ROM_HEADER = "v2.0 raw\n"
 ################    INSTRUCTION TABLE   ################
 
 #                       SHIFTS:
@@ -27,6 +26,7 @@ ROM_HEADER = "v2.0 raw\n"
 
 
 #create look up table of instructions.
+ROM_HEADER = "v2.0 raw\n"
 lut = {}
 with open("assembler2.py","r") as myself:
     for line in myself:
@@ -69,6 +69,10 @@ for instruction in program:
             to_write = to_write + lut[token]
         rom[instruction_pointer] = to_write
         instruction_pointer = instruction_pointer + 1
+#with open("sim0.txt","w")as fp:
+    #fp.write("##########0##########\n")
+    #for instruction in rom:
+        #fp.write("rom "+str(instruction)+" "+str(hex(int(rom[instruction],16))[2:])+"\n")
 
 #processor simulator helper methods
 def ram(processor_state,instruction):       #RETURN TYPE INT
@@ -231,8 +235,9 @@ def simulate_instruction(processor_name,instruction,index):
 #run the assembled program on a simulated processor
 processor_state = {}                
 for instruction in rom: #each instruction is an int
-    simulate_instruction("pro",rom[instruction],instruction)
     print(rom[instruction])
+    simulate_instruction("sim",rom[instruction],instruction)
+    
 
 
 

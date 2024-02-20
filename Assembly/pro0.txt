@@ -1,12 +1,12 @@
 ##########0##########
-rom 0 01
+rom 0 00
 
 ram 28945 08
 ram 1 04
 ram 0 ff
 
-pc 0 aa
-pc 1 5a
+pc 0 00
+pc 1 00
 
 reg 7 1
 reg 6 0

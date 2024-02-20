@@ -1,0 +1,15 @@
+##########6##########30
+rom 0 0
+
+ram 1 5
+
+
+reg 5 0
+reg 7 0
+reg 6 0
+reg 4 a
+reg 3 1
+reg 2 0
+reg 1 0
+reg 0 0
+
