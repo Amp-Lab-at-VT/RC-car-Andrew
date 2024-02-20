@@ -1,4 +1,4 @@
-##########3##########30
+##########8##########a0
 rom 0 d1
 rom 1 30
 rom 2 30
@@ -8,14 +8,16 @@ rom 5 30
 rom 6 b0
 rom 7 a0
 
+ram 0 a1
 
-pc 0 03
-pc 1 00
+pc 0 1a
+pc 1 07
+
 reg 5 0
 reg 7 0
 reg 6 0
-reg 4 1
-reg 3 0
+reg 4 a
+reg 3 1
 reg 2 0
 reg 1 0
 reg 0 0

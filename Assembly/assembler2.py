@@ -69,10 +69,12 @@ for instruction in program:
             to_write = to_write + lut[token]
         rom[instruction_pointer] = to_write
         instruction_pointer = instruction_pointer + 1
-#with open("sim0.txt","w")as fp:
-    #fp.write("##########0##########\n")
-    #for instruction in rom:
-        #fp.write("rom "+str(instruction)+" "+str(hex(int(rom[instruction],16))[2:])+"\n")
+with open("sim0.txt","w")as fp:
+    fp.write("##########0##########\n")
+    for instruction in rom:
+        fp.write("rom "+str(instruction)+" "+str(hex(int(rom[instruction],16))[2:])+"\n")
+    fp.write("pc 0 00\n")
+    fp.write("pc 1 00\n")
 
 #processor simulator helper methods
 def ram(processor_state,instruction):       #RETURN TYPE INT
@@ -225,19 +227,47 @@ def simulate_instruction(processor_name,instruction,index):
             processor_state["reg"]["5"] = instruction[1]
     
     #writeback to next state file.
+    next_program_counter = int(processor_state["pc"]["1"],16)*16 + int(processor_state["pc"]["0"],16)+1
     with open(str(processor_name)+str(index+1)+".txt","w") as fp:
         fp.write("##########"+str(index+1)+"##########"+instruction+"\n")
         for data_type in processor_state:
-            for location in processor_state[data_type]:
-                fp.write(data_type+" "+location+" "+processor_state[data_type][location]+"\n")
+            if (data_type != "pc") or (instruction[0] == "a"):
+                for location in processor_state[data_type]:
+                    fp.write(data_type+" "+location+" "+processor_state[data_type][location]+"\n")
+            else:
+                #print(str(hex(next_program_counter%16))[2:])
+                lower = str(hex(next_program_counter%16))[2:]
+                for i in range(2-len(lower)):
+                    lower = "0"+lower
+                upper = str(hex(next_program_counter//16))[2:]
+                for i in range(2-len(upper)):
+                    upper = "0"+upper
+
+                fp.write("pc 0 "+lower+"\n")
+                fp.write("pc 1 "+upper)
             fp.write("\n")  
+    
+    if str(next_program_counter) in processor_state["rom"]:
+        return processor_state["rom"][str(next_program_counter)],None
+    else:
+        return None,str(processor_state["pc"]["1"]+processor_state["pc"]["0"])
 
 #run the assembled program on a simulated processor
-processor_state = {}                
-for instruction in rom: #each instruction is an int
-    print(rom[instruction])
-    simulate_instruction("sim",rom[instruction],instruction)
+processor_state = {}    
+max_depth = 10000 
+iteration = 0    
+next_instruction = rom[0],None       
+while iteration < max_depth: #each instruction is an int
+
+
+
+    next_instruction = simulate_instruction("sim",next_instruction[0],iteration)
+        
+    if next_instruction[0] == None:
+        print("Simulator reached unwritten location in ROM: "+str(next_instruction[1])+"\n")
+        iteration = max_depth
     
+    iteration = iteration + 1
 
 
 

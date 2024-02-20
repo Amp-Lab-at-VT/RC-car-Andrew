@@ -33,6 +33,4 @@ rcon 10
 sh2u
 sh2u
 wram 0
-
-
-
+wpcl 0
