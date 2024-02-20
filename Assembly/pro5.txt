@@ -1,0 +1,19 @@
+##########5##########d4
+rom 0 01
+
+ram 28945 08
+ram 1 04
+ram 0 ff
+
+pc 0 aa
+pc 1 5a
+
+reg 7 1
+reg 6 0
+reg 5 4
+reg 4 a
+reg 3 a
+reg 2 f
+reg 1 0
+reg 0 0
+
