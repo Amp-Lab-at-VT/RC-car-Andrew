@@ -1,4 +1,4 @@
-##########5##########30
+##########25##########30
 rom 0 d1
 rom 1 30
 rom 2 30
@@ -35,15 +35,17 @@ rom 32 30
 rom 33 b0
 rom 34 a0
 
+ram 2 11
+ram 4371 11
 
-pc 0 05
+pc 0 19
 pc 1 00
-reg 5 0
+reg 5 1
 reg 7 0
 reg 6 0
-reg 4 4
-reg 3 4
-reg 2 0
-reg 1 0
+reg 4 1
+reg 3 1
+reg 2 1
+reg 1 1
 reg 0 0
 

@@ -236,10 +236,10 @@ def simulate_instruction(processor_name,instruction,index):
                     fp.write(data_type+" "+location+" "+processor_state[data_type][location]+"\n")
             else:
                 #print(str(hex(next_program_counter%16))[2:])
-                lower = str(hex(next_program_counter%16))[2:]
+                lower = str(hex(next_program_counter%256))[2:]
                 for i in range(2-len(lower)):
                     lower = "0"+lower
-                upper = str(hex(next_program_counter//16))[2:]
+                upper = str(hex(next_program_counter//256))[2:]
                 for i in range(2-len(upper)):
                     upper = "0"+upper
 
@@ -254,7 +254,7 @@ def simulate_instruction(processor_name,instruction,index):
 
 #run the assembled program on a simulated processor
 processor_state = {}    
-max_depth = 10000 
+max_depth = 100
 iteration = 0    
 next_instruction = rom[0],None       
 while iteration < max_depth: #each instruction is an int

@@ -1,0 +1,4 @@
+test = 0
+ball = 1
+if test == ball:
+    print("1")

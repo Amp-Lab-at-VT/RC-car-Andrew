@@ -24,13 +24,43 @@
 #$  e           rext        none                external to r1,r0
 #$  f           wext        select_peri         r1,r0 to external
 
-
-#THE FOLLOWING PROGRAM COMPUTES N = N + 1 INDEFINITELY
+#ESTABLISH THE JUMP TO LOCATION IN MEMORY
 rcon 1
 sh2u
 sh2u
-rcon 10
+rcon 1
 sh2u
 sh2u
+wram 2
+sh2u
+sh2u
+sh2u
+sh2u
+sh2u
+sh2u
+rcon 1
+sh2u
+sh2u
+rcon 1
+sh2u
+sh2u
+rcon 1
+wram 3
+sh2u
+sh2u
+sh2u
+sh2u
+sh2u
+sh2u
+
+#load the constant 00
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u
+
+#write 00 to ram 0 and pc lower
 wram 0
 wpcl 0
