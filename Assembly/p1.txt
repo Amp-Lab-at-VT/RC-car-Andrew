@@ -1,66 +1,80 @@
-################    INSTRUCTION TABLE   ################
-
-#                       SHIFTS:
-                    
-#"literal"      "abbrev"    "argument"      "description"
-#$  0           sh2a        ram_addr_cond       bus twice if alu cout or result eq_zero
-#$  1           sh2c        ram_addr_cond       bus twice if alu cout
-#$  2           sh2z        ram_addr_cond       bus twice if alu result eq_zero
-#$  3           sh2u        none                bus twice unconditionally
-#$  4           sh1a        ram_addr_cond       bus once if alu cout or result eq_zero
-#$  5           sh1c        ram_addr_cond       bus once if alu cout
-#$  6           sh1z        ram_addr_cond       bus once if alu result eq_zero
-#$  7           sh1u        none                bus once unconditionally
-
-#                       WRITES:
-
-#"literal"      "abbrev"    "argument"      "description"
-#$  8           r+r2        ram_addr_lsh        ram(addr) + r2 to r7
-#$  9           r&r2        ram_addr_lsh        ram(addr) NAND r2 to r7
-#$  a           wpcl        ram_addr_lsh        ram(addr) to PC lower, write PC lower byte to PC upper
-#$  b           wram        ram_addr_lsh        r4,r3 to ram(addr)
-#$  c           rpcu        none                PC upper to r4,r3
-#$  d           rcon        constant            constant from rom to r5
-#$  e           rext        none                external to r1,r0
-#$  f           wext        select_peri         r1,r0 to external
-
-#ESTABLISH THE JUMP TO LOCATION IN MEMORY
-rcon 1
+# const ab
+rcon 11
 sh2u
 sh2u
-rcon 1
+rcon 10
 sh2u
 sh2u
-wram 2
-sh2u
-sh2u
-sh2u
-sh2u
-sh2u
-sh2u
-rcon 1
-sh2u
-sh2u
-rcon 1
-sh2u
-sh2u
-rcon 1
-wram 3
-sh2u
-sh2u
-sh2u
-sh2u
-sh2u
-sh2u
-
-#load the constant 00
+# clear
 rcon 0
 sh2u
 sh2u
 rcon 0
 sh2u
 sh2u
-
-#write 00 to ram 0 and pc lower
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u
+# ramcon 0000 56
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u
+sh2u
+sh2u
+sh2u
+sh2u
+sh2u
+sh2u
+rcon 6
+sh2u
+sh2u
+rcon 5
+sh2u
+sh2u
 wram 0
-wpcl 0
+# clear
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u
+rcon 0
+sh2u
+sh2u

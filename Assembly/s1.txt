@@ -1,0 +1,4 @@
+const ab
+clear
+ramcon 0000 56
+clear

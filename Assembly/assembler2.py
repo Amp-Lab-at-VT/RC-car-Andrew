@@ -30,7 +30,7 @@ ROM_HEADER = "v2.0 raw\n"
 lut = {}
 with open("assembler2.py","r") as myself:
     for line in myself:
-        if "#$" in line:
+        if line[:2]=="#$":
             line = line.replace("\n","")
             line = line.replace("#$","")
             line = line.split(" ")
