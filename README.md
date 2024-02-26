@@ -1,10 +1,12 @@
 ## Members
 Eddie Pritchard - Computer Engineering Students (2024) epritchard@vt.edu, 
+Youssef Chebil  - Computer Engineering Student (2025)  youssefchebil@vt.edu
+
+## Other Members
 Rusty Stewart,
 Vasili Konstantinakos, 
 Felipe Quintero, 
 Pacheck Nicholas 
-
 
 ## Mentor
 Eddie Pritchard, Ethan James
